@@ -1,0 +1,12 @@
+/node_modules
+/bower_components
+/output
+/output_server
+/output_client
+/public/client.js
+result
+.psci_modules
+.browserify-cache.json
+.psci
+.pulp-cache
+server.js
