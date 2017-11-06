@@ -56,7 +56,7 @@ docker load -i result
 Run image:
 
 ```
-docker run -it --rm --name purescript-nix-bootstrap -p 3000:3000 purescript-nix-bootstrap
+docker run -it --rm --name purescript-nix-bootstrap purescript-nix-bootstrap
 ```
 
 ### Modifying system dependencies
