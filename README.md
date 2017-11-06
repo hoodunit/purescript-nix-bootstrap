@@ -70,3 +70,7 @@ Find the hash of the commit you want from the nixpkgs-channels repository (https
 ```
 nix-prefetch-git https://github.com/nixos/nixpkgs-channels --rev cfafd6f5a819472911eaf2650b50a62f0c143e3e > nixpkgs.json
 ```
+
+### Caveats
+
+You can build Docker images without Docker, but Docker still needs to be installed separately to run them.
