@@ -1,5 +1,7 @@
 ## Example project: PureScript development with Nix
 
+The idea here is to be able to develop PureScript applications without installing global dependencies and with highly reproducible build, development, and deployment environments. The only global dependency should be the Nix package manager. This setup lets you build the app with specified system dependencies, drop into a shell for development with those dependencies installed, and build a Docker image with only your app, the exact dependencies it uses, and any other system dependencies you wish to include for debugging.
+
 ### Building: one-liner
 
 With Nix installed, the following command will install system dependencies (NodeJS), install project dependencies (NPM and PureScript packages), and build the app:
