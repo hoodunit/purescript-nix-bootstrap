@@ -1,6 +1,6 @@
 ## Example project: PureScript development with Nix
 
-The idea here is to be able to develop PureScript applications without installing global dependencies and with highly reproducible build, development, and deployment environments. The only global dependency should be the Nix package manager. This setup lets you build the app with specified system dependencies, drop into a shell for development with those dependencies installed, and build a Docker image with only your app, the exact dependencies it uses, and any other system dependencies you wish to include for debugging.
+The idea here is to be able to develop PureScript applications without installing global dependencies and with highly reproducible build, development, and deployment environments. The only global dependency should be the Nix package manager. This setup lets you build the app with specified system dependencies, drop into a shell for development with those dependencies installed, and build a Docker image with only your app, the exact dependencies it uses, and any other system dependencies you wish to include for debugging. Pinning system package versions with Nix should allow us to come back to the same project much later and easily reproduce the same environments, or switch seamlessly between different projects using different versions of dependencies.
 
 ### Building: one-liner
 
@@ -67,11 +67,15 @@ Add or remove system dependencies in `buildInputs` of the file `default.nix`.
 
 ### Updating all system dependencies
 
-Find the hash of the commit you want from the nixpkgs-channels repository (https://github.com/nixos/nixpkgs-channels), then dump it to `nixpkgs.json` with the following command (substituting the hash for the one you want):
+System dependencies are specified using Nix in `default.nix`. The versions of those dependencies installed are determined by the version of pinned Nix package set specified in `nixpkgs.json`. Specifically, `nixpkgs.json` contains a Git repository commit hash and an SHA256 hash of the contents of the repository for verification. The repository specifies the versions of dependencies that are being used by default. They can also be overridden as needed.
+
+To update the pinned version, find the hash of the commit you want from the nixpkgs-channels repository (https://github.com/nixos/nixpkgs-channels), then dump it to `nixpkgs.json` with the following command (substituting the hash for the one you want):
 
 ```
 nix-prefetch-git https://github.com/nixos/nixpkgs-channels --rev cfafd6f5a819472911eaf2650b50a62f0c143e3e > nixpkgs.json
 ```
+
+Commit the result.
 
 ### Editor support
 
