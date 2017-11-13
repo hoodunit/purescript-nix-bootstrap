@@ -89,4 +89,4 @@ No need to install PureScript globally. It will use the version in your project 
 
 ### Caveats
 
-You can build Docker images without Docker, but Docker still needs to be installed separately to run them.
+You can build Docker images without Docker, but Docker still needs to be installed separately to run them. In theory you should be able to install Docker with Nix as well, but at the time of last testing I did not have luck with this.
