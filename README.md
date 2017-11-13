@@ -37,7 +37,7 @@ npm install
 ./bower update --force-latest
 ```
 
-4) Build project, rebuilding on file changes:
+4) Build project, with fast rebuilds on file changes:
 
 ```
 npm run build:watch
