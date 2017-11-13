@@ -71,6 +71,16 @@ Find the hash of the commit you want from the nixpkgs-channels repository (https
 nix-prefetch-git https://github.com/nixos/nixpkgs-channels --rev cfafd6f5a819472911eaf2650b50a62f0c143e3e > nixpkgs.json
 ```
 
+### Editor support
+
+This setup works with Emacs' [purescript-mode](https://github.com/dysinger/purescript-mode) if you set the following option:
+
+```
+(setq psc-ide-use-npm-bin t)
+```
+
+No need to install PureScript globally. It will use the version in your project directory.
+
 ### Caveats
 
 You can build Docker images without Docker, but Docker still needs to be installed separately to run them.
