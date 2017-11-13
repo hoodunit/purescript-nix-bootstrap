@@ -63,7 +63,11 @@ docker run -it --rm --name purescript-nix-bootstrap purescript-nix-bootstrap
 
 ### Modifying system dependencies
 
-Add or remove system dependencies in `buildInputs` of the file `default.nix`.
+Add or remove system dependencies in `buildInputs` of the file `default.nix`. The dependencies will be be available in build, development, and Docker environments.
+
+### Modifying Docker system dependencies
+
+Add or remove system dependencies in `contents` of the file `docker.nix`. These are extra dependencies defined for Docker images only.
 
 ### Updating all system dependencies
 

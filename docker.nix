@@ -5,8 +5,9 @@ in
 pkgs.dockerTools.buildImage {
   name = "purescript-nix-bootstrap";
   tag = "latest";
-  contents = app;
+  contents = [ pkgs.bashInteractive pkgs.coreutils pkgs.gnugrep ];
   config = {
-    Cmd = [ "${pkgs.nodejs}/bin/node" "app.js" ];
+    Cmd = [ "${app}/bin/purescript-nix-bootstrap" ];
+    WorkingDir = "${app}";
   };
 }

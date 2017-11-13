@@ -8,7 +8,8 @@ pkgs.stdenv.mkDerivation {
     pkgs.git
   ];
   buildPhase = ''
-    HOME=. npm install
+    rm -rf node_modules output bower_components
+    HOME=. npm install --verbose
     export SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
     HOME=. ./bower update --force-latest
     npm run build
