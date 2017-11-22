@@ -24,7 +24,7 @@ To run it:
 
     The only dependency you install globally on your system is the Nix package manager. Everything else is installed in a temporary sandbox by Nix as needed. Make sure the Nix binaries are on your path, e.g. by adding `~/.nix-profile/bin` to your path.
 
-2) Install PureScript + NodeJS + any other system dependencies, then drop into a shell with those installed:
+2) Install NodeJS + any other system dependencies, then drop into a shell with those installed:
 
 ```
 nix-shell
