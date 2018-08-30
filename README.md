@@ -4,6 +4,8 @@ Goals: develop PureScript applications with highly reproducible build, developme
 
 This setup lets you build a PureScript app with specified system dependencies, drop into a shell for development with those dependencies installed, and build a Docker image with only your app and the exact dependencies it uses. Pinned system dependency versions mean you can come back to the same project later and easily reproduce the same environments, or switch seamlessly between different projects using different versions of dependencies.
 
+Note that this example does /not/ use Nix to install PureScript or PureScript library dependencies themselves, but only system dependencies needed by the project i.e. NodeJS. PureScript itself is installed from npm and relies on npm's `package-lock.json` to be reproducible.
+
 ### Building: one-liner
 
 With Nix installed, the following command will install system dependencies (NodeJS), install project dependencies (NPM and PureScript packages), and build the app:
