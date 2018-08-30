@@ -80,7 +80,7 @@ System dependencies are specified using Nix in `default.nix`. The versions of th
 To update the pinned version, find the hash of the commit you want from the nixpkgs-channels repository (https://github.com/nixos/nixpkgs-channels), then dump it to `nixpkgs.json` with the following command (substituting the hash for the one you want):
 
 ```
-nix-prefetch-git https://github.com/nixos/nixpkgs-channels --rev cfafd6f5a819472911eaf2650b50a62f0c143e3e > nixpkgs.json
+nix-shell -p nix-prefetch-git --run 'nix-prefetch-git https://github.com/nixos/nixpkgs-channels --rev 7db611f2af869bac6e31ba814a5593c52d54ec19 > nixpkgs.json'
 ```
 
 Commit the result.
